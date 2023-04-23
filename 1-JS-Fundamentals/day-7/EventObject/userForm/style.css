@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+form {
+    height: 20%;
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+form div {
+    margin: 20px 0px;
+}
+
+div label {
+    padding-right: 20px;
+}
+
+span {
+    color: red;
+}
+
+table {
+    display: none;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+table, tr, td {
+    border: 1px solid black;
+}

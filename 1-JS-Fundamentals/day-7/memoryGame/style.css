@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.memory-game-blocks {
+    display: flex;
+    width: 640px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.memory-game-blocks .game-block {
+    height: 140px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.memory-game-blocks .game-block .back img {
+    width: 140px;
+    height: 140px;
+}
