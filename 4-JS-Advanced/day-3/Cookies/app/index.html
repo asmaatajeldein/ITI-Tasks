@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        img {
+            width: 60px;
+        }
+    </style>
+</head>
+<body class="container-fluid bg-light">
+    <form class="row flex-column gap-3 justify-content-center align-items-center h-100">
+        <div class="col-auto">
+            <label class="mb-2" for="name">Name:</label>
+            <input type="text" id="name" class="form-control">
+        </div>
+
+        <div class="col-auto">
+            <label class="mb-2" for="age">Age:</label>
+            <input type="text" id="age" class="form-control">
+        </div>
+
+        <div class="col-auto d-flex gap-3 m-3">
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">
+                <img src="./images/male.png">
+            </label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">
+                <img src="./images/female.png">
+            </label>
+        </div>
+
+        <div class="col-auto mb-3">
+            <select id="color" class="form-select">
+                <option Selected>Choose a color</option>
+                <option value="purple">Purple</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+        </div>
+
+        <div class="col-auto">
+            <input type="submit" value="Register" class="btn btn-secondary">
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Library</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container-fluid bg-light">
+    <section id="book-num-section" class="row flex-column justify-content-center align-items-center gap-4 h-100">
+        <div class="col-auto">
+            <label for="num-field" class="form-label">Enter Number of Books 📚</label>
+        </div>
+        <div class="col-auto">
+            <input type="number" min="1" step="1" class="form-control" id="num-field">
+        </div>
+        <div class="col-auto">
+            <input type="submit" id="submit-num" class="btn btn-success" value="Submit">
+        </div>
+    </section>
+
+    <section id="book-form" class="row d-none flex-column justify-content-center align-items-center gap-4 h-100">
+        <div class="col-auto">
+            <h3>
+                <i id="book-form-heading">📕 Book No. 1</i> 
+            </h3>
+        </div>
+        <div class="col-4">
+            <label for="book-name" class="form-label">Book's Name</label>
+            <input type="text" class="form-control" id="book-name">
+        </div>
+        <div class="col-4">
+            <label for="book-price" class="form-label">Book's Price</label>
+            <input type="text" class="form-control" id="book-price">
+        </div>
+        <div class="col-4">
+            <label for="author-name" class="form-label">Author Name</label>
+            <input type="text" class="form-control" id="author-name">
+        </div>
+        <div class="col-4">
+            <label for="author-email" class="form-label">Author E-mail</label>
+            <input type="email" class="form-control" id="author-email">
+        </div>
+        <div class="col-auto">
+            <input type="submit" id="submit-form" class="btn btn-success" value="Submit">
+        </div>
+    </section>
+
+    <section id="book-table" class="row d-none justify-content-center align-items-start p-5 h-100">
+        <table class="table table-bordered border-success table-striped text-center">
+            <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Price</th>
+                    <th>Author Name</th>
+                    <th>Author E-mail</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="edit-book-data" class="row d-none flex-column justify-content-center align-items-center gap-4 h-100">
+        <div class="col-auto">
+            <h3>
+                <i id="book-form-heading">✍🏼 Edit Book Data</i> 
+            </h3>
+        </div>
+        <div class="col-4">
+            <label for="book-name" class="form-label">Book's Name</label>
+            <input type="text" class="form-control" id="edit-book-name">
+        </div>
+        <div class="col-4">
+            <label for="book-price" class="form-label">Book's Price</label>
+            <input type="text" class="form-control" id="edit-book-price">
+        </div>
+        <div class="col-4">
+            <label for="author-name" class="form-label">Author Name</label>
+            <input type="text" class="form-control" id="edit-author-name">
+        </div>
+        <div class="col-4">
+            <label for="author-email" class="form-label">Author E-mail</label>
+            <input type="email" class="form-control" id="edit-author-email">
+        </div>
+        <div class="col-auto">
+            <input type="submit" id="edit-form" class="btn btn-success" value="Edit">
+        </div>
+    </section>
+
+    <section id="book-data-empty" class="row d-none flex-column justify-content-center align-items-center h-100">
+        <div class="col-auto border border-2 border-success rounded-2 text-center p-5">
+            <p>Your Library is Empty!</p>
+            <p>Do you want to return to submit more books?</p>
+            <button id="return" class="btn btn-success">Return</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
