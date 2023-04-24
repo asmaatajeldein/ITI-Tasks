@@ -1,0 +1,27 @@
+.text-muted {
+    color: gray;
+}
+
+
+
+#task-3{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+#audio-controls {
+    display: flex;
+    flex-direction:column;   
+}
+
+#audio-controls-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2px;;
+}
+
+#task-3 img {
+    width: 150px;
+}

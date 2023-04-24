@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 - LAB1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section id="task1">
+        <h1>Change Email Address</h1>
+        <form>
+
+            <input type="text"
+            pattern="[a-zA-Z]*"
+            placeholder="Username"
+            name="username"
+            required
+            autocomplete="off"
+            autofocus>
+
+            <p class="text-muted">
+                The required username may only be a series of alphabatical characters.
+            </p>
+            
+            <input type="email" 
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            placeholder="Email"
+            name="email"
+            required
+            autocomplete="off">
+
+            <p class="text-muted">
+                The required email may not include any special characters other than the '@' sign.
+            </p>
+    
+            <input type="submit" value="Change">
+        </form>
+    </section>
+    <br><hr><br>
+
+    <!----------------------------------------------------------------------------------->
+    
+    <section id="task-2">
+        <label for="red">Red</label>
+        <input type="range" min="0" max="255" step="0.1" id="red">
+        
+        <label for="green">Green</label>
+        <input type="range" min="0" max="255" step="0.1" id="green">
+        
+        <label for="blue">Blue</label>
+        <input type="range" min="0" max="255" step="0.1" id="blue">
+        
+        <h2 id="colorText">Change the 3 color ranges above and observe my color!</h2>
+    </section>
+    <br><hr><br>
+    <!----------------------------------------------------------------------------------->
+
+    <section id="task-3">
+        
+        <img id="song-cover" src="./music-covers/mario.jpeg">
+        <h3 id="song-title">Mario Soundtrack</h3>
+        
+        <div id="audio-controls">
+            <audio controls loop autoplay>
+                <source id="audioSource" src="./music/Super Mario Bros (NES) Music - Overworld Theme.mp3">
+            </audio>
+
+            <label for="time">time:</label>
+            <input type="range" id="time" value="0">
+            
+            <div id="audio-controls-button">
+                <button id="play">play</button>
+                <button id="pause">pause</button>
+                <button id="stop">stop</button>
+            </div>
+
+            <label for="volume">volume:</label>
+            <input type="range" id="volume" value="0.3" min="0" max="1" step="0.1">
+            
+        </div>
+        <div id="song-list">
+            <ul>
+                <li 
+                    data-cover="./music-covers/mario.jpeg" 
+                    data-song="./music/Super Mario Bros (NES) Music - Overworld Theme.mp3">
+                    Mario Soundtrack
+                </li>
+                <li 
+                    data-cover="./music-covers/ghostly-kisses.jpeg" 
+                    data-song="./music/Ghostly Kisses - Stay.mp3">
+                    Ghostly Kisses - Stay
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

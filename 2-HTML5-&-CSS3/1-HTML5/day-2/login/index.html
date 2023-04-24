@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+</head>
+<body>
+    <section>
+        <h1>Change Email Address</h1>
+        <form action="registered.html" method="get">
+
+            <input type="text"
+            pattern="[a-zA-Z]*"
+            placeholder="Username"
+            name="username"
+            required
+            autocomplete="off"
+            autofocus>
+
+            <p class="text-muted">
+                The required username may only be a series of alphabatical characters.
+            </p>
+            
+            <input type="email" 
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            placeholder="Email"
+            name="email"
+            required
+            autocomplete="off">
+
+            <p class="text-muted">
+                The required email may not include any special characters other than the '@' sign.
+            </p>
+
+            <input type="checkbox" name="remember" value="true">
+            <label for="remember">Remember Me</label><br>
+
+            <input type="submit" value="Log in">
+        </form>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
