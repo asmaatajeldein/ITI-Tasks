@@ -1,0 +1,40 @@
+nav {
+    font-size: 24px;
+    background-color: lavender;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-around;
+}
+
+main {
+    display: flex;
+    margin: 5px 5px 0px;
+    column-gap: 5px;
+}
+
+main>section {
+    border: dashed 2px black;
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section>p {
+    margin: 16px;
+}
+
+section>footer { 
+    background-color: lavender;
+}

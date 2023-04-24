@@ -1,0 +1,85 @@
+@import "./variables";
+
+.main {
+    &-title {
+        color: $primary;
+    }
+
+    &-subtitle {
+        color: $secondary;
+    }
+
+    &-btn {
+        background-color: $primary;
+        &:hover {
+            background-color: $secondary;
+        }
+    }
+}
+
+$font-sizes: 14px, 16px, 18px;
+
+@each $value in $font-sizes {
+    .font-#{$value} {
+        font-size: #{$value};
+    }
+}
+
+.finish-btn {
+    @media (min-width:0px) {
+        width: 100%;
+    }
+    @media (min-width: 500px) {
+        width: 50%;
+    }
+}
+
+
+/* PRACTICE */
+
+
+@mixin bootstrapCols($numofcols:12, $screenname:"", $breakpoint:0px) {
+    @if ($screenname == "") {
+        @media all and (min-width:$breakpoint){
+            @for $i from 1 through $numofcols {
+                .col-#{$i} {
+                    width: ($i / $numofcols) * 100;
+                }
+            }
+        }
+    } @else {
+        @media all and (min-width:$breakpoint){
+            @for $i from 1 through $numofcols {
+                .col-#{$screenname}-#{$i} {
+                    width: ($i/$numofcols) * 100;
+                }
+            }
+        }
+    }
+}
+
+@include bootstrapCols();
+@include bootstrapCols(12, "sm", 567px);
+
+
+// A Case Where We Want To Pass An Unknown Number Of Arguments //
+@function calculate($sizes...) {
+    $total: 0;
+    @each $size in $sizes {
+        $total: $total + $size;
+    }
+    @return $total;
+}
+
+@function get-total($numbers...) {
+    $total:0;
+    @each $number in $numbers {
+        $total: $total + $number;
+    }
+    @return $total;
+}
+
+.box {
+  top: get-total(100, 50, 20);
+  right: get-total(100, 50);
+}
