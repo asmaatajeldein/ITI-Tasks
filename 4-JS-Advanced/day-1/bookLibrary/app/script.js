@@ -46,15 +46,15 @@ bookNumSubmitBtn.addEventListener("click", function() {
     }
 });
 
+// (VARIABLES) SUBMIT BOOK FORM ELEMENTS /////////////////////////////////////
+var bookName = document.getElementById("book-name");
+var bookPrice = document.getElementById("book-price");
+var authorName = document.getElementById("author-name");
+var authorEmail = document.getElementById("author-email");
 
 // BOOK FORM SUBMISSION //////////////////////////////////////////////////////
-
 bookFormSubmitBtn.addEventListener("click", function () {
-    var bookName = document.getElementById("book-name");
-    var bookPrice = document.getElementById("book-price");
-    var authorName = document.getElementById("author-name");
-    var authorEmail = document.getElementById("author-email");
-    
+
     var validForm = validateForm(bookName, bookPrice, authorName, authorEmail);
 
     if (validForm) {
@@ -82,9 +82,17 @@ bookFormSubmitBtn.addEventListener("click", function () {
     }
 })
 
+// RESET FIELDS WHEN PAGE IS RELOADED ////////////////////////////////////////
+window.addEventListener("load", function() {
+    numField.value = "";
+    bookName.value = "";
+    bookPrice.value = "";
+    authorName.value = "";
+    authorEmail.value = "";
+})
+
 
 // CREATE BOOK TABLE FUNCTION //////////////////////////////////////////////
-
 function populateBookTable() {
     var table = bookTableSection.firstElementChild;
     var tbody = table.lastElementChild;
