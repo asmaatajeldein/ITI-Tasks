@@ -54,7 +54,6 @@ bookFormSubmitBtn.addEventListener("click", function () {
     var authorName = document.getElementById("author-name");
     var authorEmail = document.getElementById("author-email");
     
-    validateForm(bookName, bookPrice, authorName, authorEmail);
     var validForm = validateForm(bookName, bookPrice, authorName, authorEmail);
 
     if (validForm) {
@@ -82,75 +81,9 @@ bookFormSubmitBtn.addEventListener("click", function () {
     }
 })
 
-// EDIT BOOK DATA FORM SUBMISSION /////////////////////////////////////////////
-editFormBtn.addEventListener("click", function () {
-    var bookObj = bookArr[editBookDataSection.dataset.bookId];
-
-    var bookNameEdit = document.getElementById("edit-book-name");
-    var bookPriceEdit = document.getElementById("edit-book-price");
-    var authorNameEdit = document.getElementById("edit-author-name");
-    var authorEmailEdit = document.getElementById("edit-author-email");
-    
-    validateForm(bookNameEdit, bookPriceEdit, authorNameEdit, authorEmailEdit);
-    var validForm = validateForm(bookNameEdit, bookPriceEdit, authorNameEdit, authorEmailEdit);
-
-
-    if (validForm) {
-        bookObj.name = bookNameEdit.value;
-        bookObj.price = bookPriceEdit.value;
-        bookObj.author.name = authorNameEdit.value;
-        bookObj.author.email = authorEmailEdit.value;
-
-        bookTableSection.classList.remove("d-none");
-        editBookDataSection.classList.add('d-none');
-        populateBookTable();
-    }
-})
-
-// DELETE BUTTON (IN TABLE) CLICK HANDLER ////////////////////////////////////
-function deleteBookData (index) {
-    
-    bookArr.splice(index, 1);
-    if(!bookArr.length) {
-        returnToFirstPageOption();
-    } else {
-        populateBookTable();
-    }
-};
-
-// EDIT BUTTON (IN TABLE) CLICK HANDLER /////////////////////////////////////
-function populateEditForm(index) {
-    var bookObj = bookArr[index];
-
-    bookTableSection.classList.add("d-none");
-    editBookDataSection.classList.remove('d-none');
-
-    editBookDataSection.dataset.bookId = index;
-
-    var bookNameEdit = document.getElementById("edit-book-name");
-    var bookPriceEdit = document.getElementById("edit-book-price");
-    var authorNameEdit = document.getElementById("edit-author-name");
-    var authorEmailEdit = document.getElementById("edit-author-email");
-
-    // populate form with book data
-    bookNameEdit.value = bookObj.name;
-    bookPriceEdit.value = bookObj.price;
-    authorNameEdit.value = bookObj.author.name;
-    authorEmailEdit.value = bookObj.author.email;
-}
-
-// IF BOOK DATA IS EMPTY ///////////////////////////////////////////////////
-function returnToFirstPageOption() {
-    emptyBookDataSection.classList.remove('d-none');
-    bookTableSection.classList.add('d-none');
-}
-
-returnBtn.addEventListener('click', function() {
-    bookNumSection.classList.remove('d-none');
-    emptyBookDataSection.classList.add('d-none');
-})
 
 // CREATE BOOK TABLE FUNCTION //////////////////////////////////////////////
+
 function populateBookTable() {
     var table = bookTableSection.firstElementChild;
     var tbody = table.lastElementChild;
@@ -211,6 +144,75 @@ function populateBookTable() {
         tbody.append(tr);
     }
 }
+
+// DELETE BUTTON (IN TABLE) CLICK HANDLER ////////////////////////////////////
+function deleteBookData (index) {
+    
+    bookArr.splice(index, 1);
+    if(!bookArr.length) {
+        returnToFirstPageOption();
+    } else {
+        populateBookTable();
+    }
+};
+
+// EDIT BUTTON (IN TABLE) CLICK HANDLER /////////////////////////////////////
+function populateEditForm(index) {
+    var bookObj = bookArr[index];
+
+    bookTableSection.classList.add("d-none");
+    editBookDataSection.classList.remove('d-none');
+
+    editBookDataSection.dataset.bookId = index;
+
+    var bookNameEdit = document.getElementById("edit-book-name");
+    var bookPriceEdit = document.getElementById("edit-book-price");
+    var authorNameEdit = document.getElementById("edit-author-name");
+    var authorEmailEdit = document.getElementById("edit-author-email");
+
+    // populate form with book data
+    bookNameEdit.value = bookObj.name;
+    bookPriceEdit.value = bookObj.price;
+    authorNameEdit.value = bookObj.author.name;
+    authorEmailEdit.value = bookObj.author.email;
+}
+
+// EDIT BOOK DATA FORM SUBMISSION /////////////////////////////////////////////
+editFormBtn.addEventListener("click", function () {
+    var bookObj = bookArr[editBookDataSection.dataset.bookId];
+
+    var bookNameEdit = document.getElementById("edit-book-name");
+    var bookPriceEdit = document.getElementById("edit-book-price");
+    var authorNameEdit = document.getElementById("edit-author-name");
+    var authorEmailEdit = document.getElementById("edit-author-email");
+    
+    validateForm(bookNameEdit, bookPriceEdit, authorNameEdit, authorEmailEdit);
+    var validForm = validateForm(bookNameEdit, bookPriceEdit, authorNameEdit, authorEmailEdit);
+
+
+    if (validForm) {
+        bookObj.name = bookNameEdit.value;
+        bookObj.price = bookPriceEdit.value;
+        bookObj.author.name = authorNameEdit.value;
+        bookObj.author.email = authorEmailEdit.value;
+
+        bookTableSection.classList.remove("d-none");
+        editBookDataSection.classList.add('d-none');
+        populateBookTable();
+    }
+})
+
+// IF BOOK DATA IS EMPTY ///////////////////////////////////////////////////
+function returnToFirstPageOption() {
+    emptyBookDataSection.classList.remove('d-none');
+    bookTableSection.classList.add('d-none');
+}
+
+returnBtn.addEventListener('click', function() {
+    bookNumSection.classList.remove('d-none');
+    emptyBookDataSection.classList.add('d-none');
+})
+
 
 // FORM VALIDATION FUNCTION //////////////////////////////////////////////////
 function validateForm(bookName, bookPrice, authorName, authorEmail) {
