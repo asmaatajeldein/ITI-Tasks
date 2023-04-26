@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+}
+section {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div[id="tabs"] > div {
+    display: inline-block;
+    padding: 25px;
+}
+
+div[id="content"] > div {
+    width: 305px;
+    padding: 25px;
+    background-color: lightgray;
+    display: none;
+}
+
+.active-tab {
+    background-color: lightgray;
+}
+
+#content .active-content {
+    display: block;
+}

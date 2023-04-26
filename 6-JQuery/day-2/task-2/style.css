@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+#side-menu {
+    height: 100%;
+    width: 300px;
+    background-color: lightblue;
+    list-style-type: none;
+    position: relative;
+    right: 250px;
+}
+#side-menu li div {
+    padding: 20px;
+}
+#side-menu li div:first-child {
+    background-color: rgb(92, 188, 219);
+}
+
+#side-menu li div:last-child {
+    background-color: hsla(0, 3%, 82%, 0.411);
+    display: none;
+}
