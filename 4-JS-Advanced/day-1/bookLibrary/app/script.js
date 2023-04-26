@@ -30,6 +30,7 @@ var bookFormSubmitBtn = document.querySelector("#submit-form");
 var bookTableSection = document.querySelector("#book-table");
 var editBookDataSection = document.querySelector("#edit-book-data");
 var editFormBtn = document.querySelector("#edit-form");
+var cancelEditFromBtn = document.querySelector("#edit-cancel");
 var emptyBookDataSection = document.querySelector('#book-data-empty');
 var returnBtn = document.querySelector('#return');
 var bookNum = null; // number of books that will be entered by the user
@@ -177,18 +178,18 @@ function populateEditForm(index) {
     authorEmailEdit.value = bookObj.author.email;
 }
 
+// EDIT FORM ELEMENTS /////////////////////////////////////////////////////////
+var bookNameEdit = document.getElementById("edit-book-name");
+var bookPriceEdit = document.getElementById("edit-book-price");
+var authorNameEdit = document.getElementById("edit-author-name");
+var authorEmailEdit = document.getElementById("edit-author-email");
+
 // EDIT BOOK DATA FORM SUBMISSION /////////////////////////////////////////////
 editFormBtn.addEventListener("click", function () {
     var bookObj = bookArr[editBookDataSection.dataset.bookId];
-
-    var bookNameEdit = document.getElementById("edit-book-name");
-    var bookPriceEdit = document.getElementById("edit-book-price");
-    var authorNameEdit = document.getElementById("edit-author-name");
-    var authorEmailEdit = document.getElementById("edit-author-email");
     
     validateForm(bookNameEdit, bookPriceEdit, authorNameEdit, authorEmailEdit);
     var validForm = validateForm(bookNameEdit, bookPriceEdit, authorNameEdit, authorEmailEdit);
-
 
     if (validForm) {
         bookObj.name = bookNameEdit.value;
@@ -200,6 +201,18 @@ editFormBtn.addEventListener("click", function () {
         editBookDataSection.classList.add('d-none');
         populateBookTable();
     }
+})
+
+// CANCEL EDITING FOR BOOK DATA ////////////////////////////////////////////
+cancelEditFromBtn.addEventListener("click", function() {
+    bookNameEdit.value = "";
+    bookPriceEdit.value = "";
+    authorNameEdit.value = "";
+    authorEmailEdit.value = "";
+
+    bookTableSection.classList.remove("d-none");
+    editBookDataSection.classList.add('d-none');
+    populateBookTable();
 })
 
 // IF BOOK DATA IS EMPTY ///////////////////////////////////////////////////

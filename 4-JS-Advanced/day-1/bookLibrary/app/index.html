@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="container-fluid bg-light">
+    <!-- Input Number of Books Section -->
     <section id="book-num-section" class="row flex-column justify-content-center align-items-center gap-4 h-100">
         <div class="col-auto">
             <label for="num-field" class="form-label">Enter Number of Books 📚</label>
@@ -21,6 +22,7 @@
         </div>
     </section>
 
+    <!-- Book Form Section-->
     <section id="book-form" class="row d-none flex-column justify-content-center align-items-center gap-4 h-100">
         <div class="col-auto">
             <h3>
@@ -48,6 +50,7 @@
         </div>
     </section>
 
+    <!-- Book Table Section -->
     <section id="book-table" class="row d-none justify-content-center align-items-start p-5 h-100">
         <table class="table table-bordered border-success table-striped text-center">
             <thead>
@@ -63,6 +66,7 @@
         </table>
     </section>
 
+    <!-- Edit Book Form Section-->
     <section id="edit-book-data" class="row d-none flex-column justify-content-center align-items-center gap-4 h-100">
         <div class="col-auto">
             <h3>
@@ -86,10 +90,12 @@
             <input type="email" class="form-control" id="edit-author-email">
         </div>
         <div class="col-auto">
+            <button id="edit-cancel" class="btn btn-secondary">Cancel</button>
             <input type="submit" id="edit-form" class="btn btn-success" value="Edit">
         </div>
     </section>
 
+    <!-- Return Section-->
     <section id="book-data-empty" class="row d-none flex-column justify-content-center align-items-center h-100">
         <div class="col-auto border border-2 border-success rounded-2 text-center p-5">
             <p>Your Library is Empty!</p>
