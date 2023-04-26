@@ -157,6 +157,12 @@ function deleteBookData (index) {
     }
 };
 
+// (VARIABLES) EDIT FORM ELEMENTS /////////////////////////////////////////////////////////
+var bookNameEdit = document.getElementById("edit-book-name");
+var bookPriceEdit = document.getElementById("edit-book-price");
+var authorNameEdit = document.getElementById("edit-author-name");
+var authorEmailEdit = document.getElementById("edit-author-email");
+
 // EDIT BUTTON (IN TABLE) CLICK HANDLER /////////////////////////////////////
 function populateEditForm(index) {
     var bookObj = bookArr[index];
@@ -166,23 +172,12 @@ function populateEditForm(index) {
 
     editBookDataSection.dataset.bookId = index;
 
-    var bookNameEdit = document.getElementById("edit-book-name");
-    var bookPriceEdit = document.getElementById("edit-book-price");
-    var authorNameEdit = document.getElementById("edit-author-name");
-    var authorEmailEdit = document.getElementById("edit-author-email");
-
     // populate form with book data
     bookNameEdit.value = bookObj.name;
     bookPriceEdit.value = bookObj.price;
     authorNameEdit.value = bookObj.author.name;
     authorEmailEdit.value = bookObj.author.email;
 }
-
-// EDIT FORM ELEMENTS /////////////////////////////////////////////////////////
-var bookNameEdit = document.getElementById("edit-book-name");
-var bookPriceEdit = document.getElementById("edit-book-price");
-var authorNameEdit = document.getElementById("edit-author-name");
-var authorEmailEdit = document.getElementById("edit-author-email");
 
 // EDIT BOOK DATA FORM SUBMISSION /////////////////////////////////////////////
 editFormBtn.addEventListener("click", function () {
