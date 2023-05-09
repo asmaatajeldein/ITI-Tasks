@@ -20,7 +20,7 @@ db.products.aggregate([{$group:{_id:"$category", noProducts:{$sum:1}}}]).pretty(
 
 ***
 
-3. display max category products price
+3. Display max category products price
 ```bash
 db.products.aggregate([{$group:{_id:"$category", maxPrice:{$max:"$price"}}}]).pretty()
 ```
@@ -35,7 +35,7 @@ db.products.aggregate([{$group:{_id:"$category", maxPrice:{$max:"$price"}}}]).pr
 
 ***
 
-4. display Ahmed's orders populated with product
+4. Display Ahmed's orders populated with product
 ```bash
 db.orders.aggregate([
     {$lookup:{from:"users", localField:"userId", foreignField:"_id", as:"orderPlacedBy"}},
@@ -96,7 +96,7 @@ db.orders.aggregate([
 
 ***
 
-5. get user Ahmed's highest order price
+5. Get user Ahmed's highest order price
 ```bash
 db.orders.aggregate([
     {$lookup:{from:"users", localField:"userId", foreignField:"_id", as:"orderPlacedBy"}},
