@@ -54,27 +54,15 @@ program.command('edit')
             const data = readDB();
             // console.log(options)
 
-            if(options.title) {
-                const newData = data.map(entry => {
-                    if (entry.id === +options.id) {
-                        entry.title = options.title;
-                    }
-                    return entry;
-                });
+            const newData = data.map(entry => {
+                if (entry.id === +options.id) {
+                    entry.title = options.title || entry.title;
+                    entry.status = options.status || entry.status;
+                }
+                return entry;
+            });
 
-                fs.writeFileSync('./db.json', JSON.stringify(newData, null, 2), {encoding:'utf-8'})
-            }
-
-            if(options.status){
-                const newData = data.map(entry => {
-                    if (entry.id === +options.id) {
-                        entry.status = options.status;
-                    }
-                    return entry;
-                });
-
-                fs.writeFileSync('./db.json', JSON.stringify(newData, null, 2), {encoding:'utf-8'})
-            }
+            fs.writeFileSync('./db.json', JSON.stringify(newData, null, 2), {encoding:'utf-8'})
         })
 
 program.command('delete')
