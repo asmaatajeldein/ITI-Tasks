@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "new title",
+    "date": 1683903898620,
+    "status": "to-do"
+  },
+  {
+    "id": 2,
+    "title": "hamada",
+    "date": 1683903905412,
+    "status": "in-progress"
+  },
+  {
+    "id": 3,
+    "title": "3rd note",
+    "date": 1683903922246,
+    "status": "to-do"
+  }
+]
