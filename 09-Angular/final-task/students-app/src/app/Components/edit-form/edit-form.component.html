@@ -1,0 +1,81 @@
+<div class="modal fade" id="editStudtentDetailsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-light">
+      <div class="modal-header d-flex align-items-center px-5 py-4">
+        <h5 class="modal-title text-lavendar fw-semibold">
+          <i class="bi bi-pencil-square pe-2"></i>
+          <i>Edit Student Details</i>
+        </h5>
+        <button type="button" routerLink="/" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form *ngIf="studentData" [formGroup]="studentValidation">
+        <div class="modal-body d-flex flex-column gap-4 p-5 pt-4">
+
+          <div>
+            <label for="student-name" class="col-form-label">Name:</label>
+            <input type="text" formControlName="name" class="form-control" id="student-name"
+              [ngClass]="NameValid? 'is-valid': studentValidation.controls['name'].value != null? 'is-invalid': ''">
+            <span *ngIf="NameValid; then validInput; else invalidInput"></span>
+          </div>
+
+          <div>
+            <label for="student-email" class="col-form-label">E-mail:</label>
+            <input type="text" formControlName="email" class="form-control" id="student-email"
+              [ngClass]="EmailValid? 'is-valid': studentValidation.controls['email'].value != null? 'is-invalid': ''">
+            <span *ngIf="EmailValid; then validInput; else invalidInput"></span>
+          </div>
+
+          <div>
+            <label for="student-birtdate" class="col-form-label">Birthdate:</label>
+            <input type="date" formControlName="birthdate" class="form-control" id="student-birtdate"
+              [ngClass]="BirthdateValid? 'is-valid': studentValidation.controls['birthdate'].value != null? 'is-invalid': ''">
+            <span *ngIf="BirthdateValid; then validInput; else invalidInput"></span>
+          </div>
+
+          <div>
+            <label for="student-gender" class="col-form-label">Gender:</label>
+            <select type="text" formControlName="gender" class="form-select" id="student-gender"
+              [ngClass]="GenderValid? 'is-valid': studentValidation.controls['gender'].value != null? 'is-invalid': ''">
+              <option value="">Select Gender</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+            <span *ngIf="GenderValid; then validInput; else invalidInput"></span>
+          </div>
+
+          <div>
+            <label for="student-major" class="col-form-label">Major:</label>
+            <input type="text" formControlName="major" class="form-control" id="student-major"
+              [ngClass]="MajorValid? 'is-valid': studentValidation.controls['major'].value != null? 'is-invalid': ''">
+            <span *ngIf="MajorValid; then validInput; else invalidInput"></span>
+          </div>
+
+          <div>
+            <label for="student-gpa" class="col-form-label">GPA:</label>
+            <input type="number" min="0" max="4" formControlName="gpa" class="form-control" id="student-gpa"
+              [ngClass]="GpaValid? 'is-valid': studentValidation.controls['gpa'].value != null || studentValidation.controls['gpa'].value != ''? 'is-invalid': ''">
+            <span *ngIf="GpaValid; then validInput; else invalidInput"></span>
+          </div>
+        </div>
+
+        <div class="modal-footer pe-5">
+          <input type="submit" (click)="editStudent()" value="Edit" data-bs-dismiss="modal"
+          [ngClass]="!NameValid || !EmailValid || !BirthdateValid || !GenderValid || !MajorValid || !GpaValid? 'disabled btn btn-secondary': 'btn btn-lavendar'">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #validInput>
+  <div class="valid-feedback">
+    Looks good!
+  </div>
+</ng-template>
+
+<ng-template #invalidInput>
+  <div class="invalid-feedback">
+    Invalid Input.
+  </div>
+</ng-template>

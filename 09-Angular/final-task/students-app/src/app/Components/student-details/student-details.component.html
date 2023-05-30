@@ -1,0 +1,41 @@
+<div class="modal fade" id="studentDetailsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-light">
+      <div class="modal-header d-flex align-items-center px-5 py-4">
+        <h5 class="modal-title text-lavendar fw-semibold">
+          <i class="bi bi-info-circle pe-2"></i>
+          <i>Student Details</i>
+        </h5>
+        <button type="button" routerLink="/" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column gap-4 p-5 pt-4">
+        <form *ngIf="studentData">
+          <div class="mb-3">
+            <label for="student-name" class="col-form-label">Name:</label>
+            <input type="text" [value]="studentData.name" class="form-control" id="student-name" disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label for="student-email" class="col-form-label">E-mail:</label>
+            <input type="text" [value]="studentData.email" class="form-control" id="student-email" disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label for="student-birtdate" class="col-form-label">Birthdate:</label>
+            <input type="date" [value]="studentData.birthdate" class="form-control" id="student-birtdate" disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label for="student-gender" class="col-form-label">Gender:</label>
+            <input type="text" [value]="studentData.gender" class="form-control" id="student-gender" disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label for="student-major" class="col-form-label">Major:</label>
+            <input type="text" [value]="studentData.major" class="form-control" id="student-major" disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label for="student-gpa" class="col-form-label">GPA:</label>
+            <input type="number" [value]="studentData.gpa" min="0" max="4" class="form-control" id="student-gpa" disabled readonly>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

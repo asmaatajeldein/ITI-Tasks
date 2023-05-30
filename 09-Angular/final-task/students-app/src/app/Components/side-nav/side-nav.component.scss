@@ -1,0 +1,9 @@
+@import 'src/styles/variables';
+
+.nav {
+  .nav-link {
+    &.active {
+      background-color: $lavendar;
+    }
+  }
+}

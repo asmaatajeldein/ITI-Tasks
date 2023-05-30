@@ -1,0 +1,103 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Olivia Rodriguez",
+      "email": "olivia.rodriguez@example.com",
+      "birthdate": "2000-02-12",
+      "gender": "female",
+      "major": "English Literature",
+      "gpa": 3.7
+    },
+    {
+      "id": 2,
+      "name": "Sherlock Holmes",
+      "email": "sherlock.holmes@example.com",
+      "birthdate": "1854-01-06",
+      "gender": "male",
+      "major": "Criminal Justice",
+      "gpa": 3.9
+    },
+    {
+      "id": 3,
+      "name": "Daniel Park",
+      "email": "daniel.park@example.com",
+      "birthdate": "1999-08-29",
+      "gender": "male",
+      "major": "Chemical Engineering",
+      "gpa": 3.4
+    },
+    {
+      "id": 4,
+      "name": "Sophie Chen",
+      "email": "sophie.chen@example.com",
+      "birthdate": "2001-04-06",
+      "gender": "female",
+      "major": "Computer Science",
+      "gpa": 3.9
+    },
+    {
+      "id": 5,
+      "name": "Ryan Patel",
+      "email": "ryan.patel@example.com",
+      "birthdate": "1998-12-18",
+      "gender": "male",
+      "major": "Political Science",
+      "gpa": 3.2
+    },
+    {
+      "id": 6,
+      "name": "Isabella Wong",
+      "email": "isabella.wong@example.com",
+      "birthdate": "2000-07-06",
+      "gender": "female",
+      "major": "Business Administration",
+      "gpa": 3.6
+    },
+    {
+      "id": 7,
+      "name": "Hermione Granger",
+      "email": "hermione.granger@example.com",
+      "birthdate": "1979-09-19",
+      "gender": "female",
+      "major": "Magical Law",
+      "gpa": 4
+    },
+    {
+      "id": 8,
+      "name": "Tony Stark",
+      "email": "tony.stark@example.com",
+      "birthdate": "1970-05-29",
+      "gender": "male",
+      "major": "Mechanical Engineering",
+      "gpa": 3.5
+    },
+    {
+      "id": 9,
+      "name": "Peter Parker",
+      "email": "peter.parker@example.com",
+      "birthdate": "2001-08-10",
+      "gender": "male",
+      "major": "Biology",
+      "gpa": 3.6
+    },
+    {
+      "id": 10,
+      "name": "Hannibal Lecter",
+      "email": "hannibal.lecter@example.com",
+      "birthdate": "1933-01-20",
+      "gender": "male",
+      "major": "Psychology",
+      "gpa": 3.8
+    },
+    {
+      "id": 11,
+      "name": "Katniss Everdeen",
+      "email": "katniss.everdeen@example.com",
+      "birthdate": "1995-05-08",
+      "gender": "female",
+      "major": "Sociology",
+      "gpa": 3.4
+    }
+  ]
+}

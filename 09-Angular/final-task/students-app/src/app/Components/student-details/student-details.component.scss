@@ -1,0 +1,39 @@
+@import 'src/styles/variables';
+
+.text-lavendar {
+  color: $lavendar;
+}
+
+.student-card {
+  width: 50%;
+  border: 2px $lavendar solid;
+  border-radius: 10px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border: 2px $lavendar solid;
+  border-radius: 100%;
+
+  i {
+    font-size: 100px;
+    color: $lavendar;
+  }
+}
+
+table {
+  width: 75%;
+  tr {
+    th {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    th, td {
+      padding-left: 20px;
+      width: 50%;
+      height: 40px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="modal fade" id="deleteStudtentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-light">
+      <div class="modal-header d-flex align-items-center px-4 py-4">
+        <h5 class="modal-title text-lavendar fw-semibold">
+          <i class="bi bi-person-dash pe-2"></i>
+          <i>Remove Student</i>
+        </h5>
+        <button type="button" routerLink="/" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4" *ngIf="studentData">
+        <h6>Do you want to remove <span class="fw-bold">{{studentData.name}}</span>?</h6>
+      </div>
+      <div class="modal-footer pe-4">
+        <button type="button" (click)="deleteStudent()" class="btn btn-lavendar" data-bs-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

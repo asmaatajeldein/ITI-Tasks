@@ -1,0 +1,68 @@
+<main *ngIf="students else loadingComponent" class="bg-light d-flex justify-content-center align-items-start pt-4 py-5 h-100">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Student Name</th>
+        <th colspan="3">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>
+          <a routerLink="{{student.id}}" type="button" class="btn btn-lavendar" data-bs-toggle="modal" data-bs-target="#studentDetailsModal">
+            Details
+          </a>
+        </td>
+        <td>
+          <a routerLink="edit/{{student.id}}" type="button" class="btn btn-lavendar" data-bs-toggle="modal" data-bs-target="#editStudtentDetailsModal">
+            Edit
+          </a>
+        </td>
+        <td>
+          <a routerLink="delete/{{student.id}}" type="button" class="btn btn-lavendar" data-bs-toggle="modal" data-bs-target="#deleteStudtentModal">
+            Delete
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <router-outlet></router-outlet>
+
+  <!-- <div class="modal fade" [id]="TargetModalID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <router-outlet></router-outlet>
+  </div> -->
+
+  <!-- <ng-container [ngSwitch]="TargetModalID">
+    <div class="modal fade" *ngSwitchCase="'studentDetailsModal'" id="studentDetailsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="modal fade" *ngSwitchCase="'editStudtentDetailsModal'" id="editStudtentDetailsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="modal fade" *ngSwitchCase="'deleteStudtentModal'" id="deleteStudtentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <router-outlet></router-outlet>
+    </div>
+  </ng-container> -->
+</main>
+<ng-template #loadingComponent>
+  <app-refresh></app-refresh>
+</ng-template>
+<!-- <ng-template #detailsModal>
+  <div class="modal fade" id="studentDetailsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>
+<ng-template #editModal>
+  <div class="modal fade" id="editStudtentDetailsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>
+<ng-template #deleteModal>
+  <div class="modal fade" id="deleteStudtentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <router-outlet></router-outlet>
+  </div>
+</ng-template> -->

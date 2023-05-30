@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@100;200;300;400;500;600&display=swap');
+@import 'src/styles/variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  min-height: 100vh;
+  font-family: 'Cairo', sans-serif;
+}
+
+
+.text-lavendar {
+  color: $lavendar;
+}
+
+.btn {
+  &.btn-lavendar{
+    background-color: $lavendar;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $lavendar;
+      color: $lavendar;
+    }
+  }
+}

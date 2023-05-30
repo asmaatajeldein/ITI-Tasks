@@ -1,0 +1,73 @@
+<main class="p-5">
+  <div>
+    <h5 class="text-lavendar fw-semibold">
+      <i class="bi bi-person-add pe-2"></i>
+      <i>Add a New Student</i>
+    </h5>
+  </div>
+  <form class="p-4" [formGroup]="addStudentValidation">
+    <div class="mb-3">
+      <label for="student-name" class="col-form-label">Name:</label>
+      <input type="text" formControlName="name" class="form-control" id="student-name"
+        [ngClass]="NameValid? 'is-valid': addStudentValidation.controls['name'].value != null? 'is-invalid': ''">
+      <span *ngIf="NameValid; then validInput; else invalidInput"></span>
+    </div>
+
+    <div class="mb-3">
+      <label for="student-email" class="col-form-label">E-mail:</label>
+      <input type="text" formControlName="email" class="form-control" id="student-email"
+      [ngClass]="EmailValid? 'is-valid': addStudentValidation.controls['email'].value != null? 'is-invalid': ''">
+      <span *ngIf="EmailValid; then validInput; else invalidInput"></span>
+    </div>
+
+    <div class="mb-3">
+      <label for="student-birtdate" class="col-form-label">Birthdate:</label>
+      <input type="date" formControlName="birthdate" class="form-control" id="student-birtdate"
+      [ngClass]="BirthdateValid? 'is-valid': addStudentValidation.controls['birthdate'].value != null? 'is-invalid': ''">
+      <span *ngIf="BirthdateValid; then validInput; else invalidInput"></span>
+    </div>
+
+    <div class="mb-3">
+      <label for="student-gender" class="col-form-label">Gender:</label>
+      <select type="text" formControlName="gender" class="form-select" id="student-gender"
+      [ngClass]="GenderValid? 'is-valid': addStudentValidation.controls['gender'].value != null? 'is-invalid': ''">
+        <option value="" selected>Select Gender</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+      </select>
+      <span *ngIf="GenderValid; then validInput; else invalidInput"></span>
+    </div>
+
+    <div class="mb-3">
+      <label for="student-major" class="col-form-label">Major:</label>
+      <input type="text" formControlName="major" class="form-control" id="student-major"
+      [ngClass]="MajorValid? 'is-valid': addStudentValidation.controls['major'].value != null? 'is-invalid': ''">
+      <span *ngIf="MajorValid; then validInput; else invalidInput"></span>
+    </div>
+
+    <div class="mb-3">
+      <label for="student-gpa" class="col-form-label">GPA:</label>
+      <input type="text" formControlName="gpa" class="form-control" id="student-gpa"
+      [ngClass]="GpaValid? 'is-valid': addStudentValidation.controls['gpa'].value != null? 'is-invalid': ''">
+      <span *ngIf="GpaValid; then validInput; else invalidInput"></span>
+    </div>
+
+    <div class="d-flex justify-content-center mt-2">
+      <input type="submit" class="btn btn-lavendar" value="Add" (click)="addStudent()"
+      [ngClass]="!NameValid || !EmailValid || !BirthdateValid || !GenderValid || !MajorValid || !GpaValid? 'disabled btn btn-secondary': 'btn btn-lavendar'">
+    </div>
+  </form>
+</main>
+
+
+<ng-template #validInput>
+  <div class="valid-feedback">
+    Looks good!
+  </div>
+</ng-template>
+
+<ng-template #invalidInput>
+  <div class="invalid-feedback">
+    Invalid Input.
+  </div>
+</ng-template>
